@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 
 const strategies = [
   {
@@ -64,7 +64,7 @@ function highlightDSL(code: string) {
     }
 
     // Process tokens
-    const parts: JSX.Element[] = [];
+    const parts: React.JSX.Element[] = [];
     let remaining = line;
     let keyIdx = 0;
 
@@ -101,7 +101,7 @@ function highlightDSL(code: string) {
 
     tokens.sort((a, b) => a.start - b.start);
 
-    const elements: JSX.Element[] = [];
+    const elements: React.JSX.Element[] = [];
     let pos = 0;
     for (const token of tokens) {
       if (token.start > pos) {
